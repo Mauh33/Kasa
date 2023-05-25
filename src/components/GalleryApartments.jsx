@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
 import { DataContext } from "../utils/hooks/DataContext";
-// import AppartData from "../datas/apartmentDatas.json";
 
 const GalleryApartments = () => {
-  const { data } = useContext(DataContext);
+  const jsonData = useContext(DataContext);
 
   return (
     <div className='Gallery'>
-      {data.map((item, i) => (
+      {jsonData.map((item, i) => (
         <div className='card' key={i}>
           <h2>{item.title}</h2>
           <div className='linear-card'>
