@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { DataProvider } from "./utils/hooks/DataContext";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import ErrorPage from "./pages/ErrorPage";
+import Apartment from "./pages/Apartment";
+const jsonData = require("./datas/apartmentDatas.json");
 
-function App() {
+const App = () => {
+  const [data, setData] = useState(jsonData);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <DataProvider>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/Apartment' element={<Apartment />} />
+          <Route path='/About' element={<About />} />
+          <Route path='*' element={<ErrorPage />} />
+        </Routes>
+      </DataProvider>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

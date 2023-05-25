@@ -1,0 +1,39 @@
+.error-bloc {
+  @extend %columnCenterFlexNoWrap;
+
+  width: 90%;
+  margin: auto;
+  height: 60vh;
+
+
+  p, li {
+    color: $color-1;
+  }
+}
+
+.error-li {
+  text-decoration: underline $color-1;
+  font-size: $font-m;
+  margin-top: 100px;
+};
+
+.error-number {
+  img {
+    display: block;
+    width: 198px;
+    height: 99px;
+    margin-bottom: $generic-size-s;
+  }
+}
+
+.error-explanation {
+  p {
+    display: block;
+    width: 60%;
+    height: 40px;
+    font-size: $font-xl;
+    margin: auto;
+    text-align: center;
+    padding: 0 10px;
+  }
+}

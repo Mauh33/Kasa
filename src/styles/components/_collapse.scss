@@ -1,0 +1,67 @@
+
+.collapse-bloc {
+  @extend %columnSpaceevenly;
+  width: 90%;
+  height: 500px;
+  margin: $generic-size-l auto;
+}
+
+
+.collapse-toggle {
+  width: 90%;
+}
+
+.title-conditions {
+  @extend %js-spacebetweenFlex-wrap;
+  width: 100%;
+  height: 38px;
+  background-color: $color-1;
+  border-radius: 5px;
+  p{
+    color: $color-screen;
+    font-size: $font-sm;
+    padding-left: 20px;
+  }
+}
+
+
+.toggle-open, .toggle-close {
+  cursor: pointer;
+  margin-right: 30px;
+  width: 19px;
+  height: 19px;
+}
+
+.toggle-open {
+  transition: transform 0.3s ease;
+}
+
+.toggle-close {
+  transform: rotate(180deg);
+}
+
+
+
+.collapse-description {
+  padding: 20px 10px 30px;
+  background-color: $color-2;
+  transition: height 0.8s ease-in-out, transform 1s ease-in-out;
+  transform-origin: top;
+  // transition: all 0.3s cubic-bezier(0,1,0,1);
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  display: none;
+}
+
+.collapse-description-active {
+  background-color: $color-2;
+  color: $color-1;
+  font-size: $font-s;
+  height: 143px;
+  line-height: 142%;
+  // transition: all 0.8s cubic-bezier(1,0,1,0);
+  transform: scaleY(1);
+  border-radius: 7px;
+  padding: 16px;
+}

@@ -1,0 +1,29 @@
+$breakpoints: (
+  "default": "min-width: 375px",
+  "s": "(min-width: 768px)",
+  "m": "(min-width: 992px)",
+  "l": "(min-width:1200px)",
+  "xl": "(min-width: 1440px)",
+);
+
+@mixin breakpoint($user-value) {
+  $my-map: map-get($breakpoints, $user-value);
+  @if $my-map {
+    @media (#{$my-map}) {
+      @content;
+    }
+  }@else {
+    @error "Opps, seems like the breakpoint #{$user-value} isn't define yet"
+  }
+};
+
+@mixin js-spaceevenlyFlex-wrap {
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@mixin js-spacebetweenFlex {
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,57 @@
+
+.Gallery {
+  @extend %js-spacearoundFlex-wrap;
+  margin: $generic-size-l auto;
+  width: 90%;
+  min-width: 375px;
+}
+
+
+.card {
+  @extend %columnCenterFlex;
+  width: 90%;
+  min-width: 335px;
+  max-width: 340px;
+  min-height: 255px;
+  max-height: 340px;
+  position: relative;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  margin-bottom: $generic-size-m;
+  border-radius: 10px;
+
+}
+
+.linear-card {
+  @extend %linear-gradient;
+  position: absolute;
+  width: 100%;
+  max-width: 340px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  img {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    min-height: 255px;
+    max-height: 340px;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+  }
+
+h2 {
+  position: absolute;
+  display: block;
+  z-index: 2;
+  left: 10%;
+  color: $color-screen;
+  bottom: $generic-size-m;
+  font-size: 18px;
+  font-weight: $fw-medium;
+  padding-inline-end: 50%;
+}
