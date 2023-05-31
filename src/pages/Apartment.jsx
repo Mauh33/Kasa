@@ -6,6 +6,7 @@ import { DataContext } from "../utils/hooks/DataContext";
 import { useParams } from "react-router-dom";
 import Dropdown from "../components/Dropdown";
 import RatingStar from "../assets/icons/star-active.png";
+import RatingInactiveStar from "../assets/icons/star-inactive.png";
 
 const Apartment = () => {
   const jsonData = useContext(DataContext);
@@ -33,9 +34,6 @@ const Apartment = () => {
   const pictures =
     filteredDataWithTags.length > 0 ? filteredDataWithTags[0].pictures : [];
 
-  const stars = <img src={RatingStar} alt='rating-stars' />;
-  const range = [1, 2, 3, 4, 5];
-
   return (
     <div className='page'>
       <Header />
@@ -45,18 +43,39 @@ const Apartment = () => {
           <div className='apartment-block'>
             {filteredDataWithTags.map((item, i) => (
               <div key={i}>
-                <h1>{item.title}</h1>
                 <div>
-                  <p>{item.location}</p>
+                  <h1>{item.title}</h1>
+                  <div>
+                    <p>{item.location}</p>
+                  </div>
+                  <div>
+                    <div>
+                      {item.tags.map((tags, index) => (
+                        <p key={index}>{tags}</p>
+                      ))}
+                      <p></p>
+                    </div>
+                  </div>
                 </div>
                 <div>
-                  {range.map(rangeElem =>
-                    item >= rangeElem ? (
-                      <span key={rangeElem.toString()}>{stars}</span>
-                    ) : null
-                  )}
+                  <div>
+                    <p>{item.host.name}</p>
+                    <img src={item.host.picture} alt='' />
+                    <div>
+                      {Array.from({ length: 5 }, (_, index) => (
+                        <img
+                          key={index}
+                          src={
+                            index < item.rating
+                              ? RatingStar
+                              : RatingInactiveStar
+                          }
+                          alt=''
+                        />
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <div>{item.rating}</div>
               </div>
             ))}
             <div>

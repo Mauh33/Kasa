@@ -49,7 +49,11 @@ const Dropdown = ({ data, showDescription, showEquipments, showValue }) => {
             ) : showDescription && item.description ? (
               <>{<p>{item.description}</p>}</>
             ) : showEquipments && item.equipments ? (
-              <>{<p>{item.equipments}</p>}</>
+              <ul>
+                {item.equipments.map((equipment, index) => (
+                  <li key={index}>{equipment}</li>
+                ))}
+              </ul>
             ) : null}
           </div>
         </div>
@@ -59,3 +63,5 @@ const Dropdown = ({ data, showDescription, showEquipments, showValue }) => {
 };
 
 export default Dropdown;
+
+// {<p>{item.equipments}</p>}
