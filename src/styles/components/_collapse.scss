@@ -8,7 +8,7 @@
 
 
 .collapse-toggle {
-  width: 90%;
+  width: 100%;
 }
 
 .title-conditions {
@@ -34,10 +34,12 @@
 
 .toggle-open {
   transition: transform 0.3s ease;
+  transform: rotate(0deg);
 }
 
 .toggle-close {
   transform: rotate(180deg);
+  transition: transform 0.3s ease;
 }
 
 
@@ -60,7 +62,7 @@
   font-size: $font-s;
   height: 143px;
   line-height: 142%;
-  // transition: all 0.8s cubic-bezier(1,0,1,0);
+  // transition: height 0.8s cubic-bezier(1,0,1,0);
   transform: scaleY(1);
   border-radius: 7px;
   padding: 16px;

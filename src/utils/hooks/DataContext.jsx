@@ -11,7 +11,6 @@ export const DataProvider = ({ children }) => {
         const response = await fetch("/apartmentDatas.json");
         const data = await response.json();
         setJsonData(data);
-        console.log(data);
       } catch (error) {
         console.error(error);
       }

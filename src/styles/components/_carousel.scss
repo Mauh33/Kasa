@@ -1,0 +1,60 @@
+
+
+.carousel-bloc {
+  min-width: 335px ;
+  width: 90%;
+  min-height: 255px;
+  margin: $generic-size-s auto 0;
+}
+
+.carousel {
+  @extend %js-spacebetweenFlex-wrap;
+  position: relative;
+}
+
+.carousel-picture {
+  position: relative;
+  min-height: 255px;
+  height: 255px;
+  min-width: 335px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-btn {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+}
+
+
+.carousel-btn:nth-child(odd) {
+  left: 1.5vh;
+}
+
+.carousel-btn:nth-child(even) {
+  right: 1.5vh;
+}
+
+.carousel-arrow {
+  width: 100%;
+  height: auto;
+  color: $color-screen;
+}
+
+.carousel-counter-bloc {
+  position: absolute;
+    bottom: 15px;
+    right: 50%;
+}
+
+.carousel-counter {
+  font-size: $font-xl;
+  color: $color-screen;
+}

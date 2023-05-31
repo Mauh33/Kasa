@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { DataContext } from "../utils/hooks/DataContext";
+import { NavLink } from "react-router-dom";
 
 const GalleryApartments = () => {
   const jsonData = useContext(DataContext);
@@ -10,7 +11,12 @@ const GalleryApartments = () => {
         <div className='card' key={i}>
           <h2>{item.title}</h2>
           <div className='linear-card'>
-            <img src={item.cover} alt='' />
+            <NavLink
+              to={`/Apartment/${item.id.replace(/\s+/g, "-")}`}
+              activeclassname='active'
+            >
+              <img src={item.cover} alt='' />
+            </NavLink>
           </div>
         </div>
       ))}
