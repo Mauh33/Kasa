@@ -1,18 +1,27 @@
-// DataContext.js
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [data, setData] = useState([]);
+  const [jsonData, setJsonData] = useState([]);
 
-  const updateData = jsonData => {
-    setData(jsonData);
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/apartmentDatas.json");
+        const data = await response.json();
+        setJsonData(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
-    <DataContext.Provider value={{ data, updateData }}>
-      {children}
-    </DataContext.Provider>
+    <div>
+      <DataContext.Provider value={jsonData}> {children} </DataContext.Provider>
+    </div>
   );
 };

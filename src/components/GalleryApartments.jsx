@@ -1,17 +1,22 @@
 import React, { useContext } from "react";
 import { DataContext } from "../utils/hooks/DataContext";
-// import AppartData from "../datas/apartmentDatas.json";
+import { NavLink } from "react-router-dom";
 
 const GalleryApartments = () => {
-  const { data } = useContext(DataContext);
+  const jsonData = useContext(DataContext);
 
   return (
     <div className='Gallery'>
-      {data.map((item, i) => (
+      {jsonData.map((item, i) => (
         <div className='card' key={i}>
-          <h2>{item.title}</h2>
           <div className='linear-card'>
-            <img src={item.cover} alt='' />
+            <NavLink
+              to={`/Apartment/${item.id.replace(/\s+/g, "-")}`}
+              activeclassname='active'
+            >
+              <img src={item.cover} alt='' />
+            </NavLink>
+            <h2>{item.title}</h2>
           </div>
         </div>
       ))}

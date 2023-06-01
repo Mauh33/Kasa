@@ -6,6 +6,7 @@ $color-3: #666666;
 $color-4: #000000;
 
 
+$font-xs: 10px;
 $font-s: 12px;
 $font-sm:13px;
 $font-m: 14px;
@@ -43,7 +44,7 @@ $generic-size-xxl:48px;
   @include js-spacebetweenFlex;
 }
 
-.main-home {
+.main-home, .main-about, .main-Apartment {
   padding-bottom: 250px;
 }
 
@@ -62,6 +63,83 @@ body {
     margin: auto;
   }
   @extend %margin-auto;
+
+  @include breakpoint(s) {
+
+    .main-Apartment {
+      padding-bottom: 100px;
+    }
+
+    .infos {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: $generic-size-s;
+    }
+
+    .location-infos {
+      flex-basis: 400px;
+      h1 {
+        font-size: $font-xxl;
+      }
+    }
+    .location {
+      font-size: $font-l;
+    }
+
+    .tags {
+      width: 115px;
+      height: 25px;
+      border-radius: $generic-size-m;
+      margin: $generic-size-s $generic-size-xs;
+
+      p {
+        padding-top: 5px;
+        vertical-align: center;
+        font-size: 12px;
+      }
+    }
+
+    .owner-bloc {
+      flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 150px;
+    height: 110px;
+    margin-left: 35vw;
+    }
+
+    .starSnippets-bloc {
+      padding-bottom: 20px;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .Apartment-Dropdown-bloc {
+      display: flex;
+      @include js-spaceevenlyBaseline;
+      min-height: 150px;
+      margin-top: 50px;
+      .collapse-bloc {
+        width: 40%;
+        max-width: 582px;
+      }
+    }
+
+    .owner-infos p {
+      padding-left: 2em;
+      font-size: $font-m;
+    }
+
+    .picture-owner {
+      width: 56px;
+    height: 56px;
+    border-radius: 32px;
+    }
+
+  }
 
 
   @include breakpoint(m) {
@@ -99,13 +177,29 @@ body {
       margin: 10px 10px $generic-size-xl;
     }
     }
+
+    .title-conditions {
+      p {
+        font-size: $font-l;
+      }
+    }
+
+    .collapse-description-active {
+      p, li {
+        font-size: $font-l;
+      }
+    }
+
+    .carousel-counter {
+      display: block;
+    }
+
     .footer p {
       font-size: $font-m;
     }
   }
 
   @include breakpoint(l) {
-    max-width: 1440px;
 
     .navigation {
       width: 350px;
@@ -117,6 +211,7 @@ body {
       margin: 20px auto 50px;
       width: 90%;
     }
+
     .cover {
       h1 {
         top: 85px;
@@ -130,6 +225,10 @@ body {
       max-width: 1240px;
     }
 
+    .cover, .cover2 {
+      margin-bottom: $generic-size-xxl;
+    }
+
     .Gallery {
       height: auto;
       .card {
@@ -141,12 +240,96 @@ body {
       max-height: unset;
     }
 
+    .carousel-picture {
+      height: 415px;
+    }
+
     .about__section {
       max-width: 1023px;
     }
 
     .collapse-bloc {
       width: 100%;
+    }
+
+    .title-conditions {
+      height: $generic-size-xxl;
+      p {
+        font-size: $font-xxl;
+      }
+    }
+
+    .main-Apartment {
+      padding-bottom: 500px;
+    }
+
+
+    .apartment-block {
+      width: 100%;
+    }
+
+    .infos {
+      margin-top: $generic-size-l;
+      flex-wrap: nowrap;
+    }
+
+    .location-infos {
+      flex-basis: 600px;
+      margin-left: $generic-size-xs;
+      h1 {
+        font-size: $font-3xl;
+      }
+    }
+
+    .location {
+      font-size: $font-xl;
+    }
+
+    .tags p {
+      font-size: $font-m;
+    }
+
+    .starSnippets-bloc {
+      padding-bottom: unset;
+      img {
+        width: $generic-size-l;
+        height: $generic-size-l;
+      }
+    }
+    .owner-bloc {
+      margin-left: 0;
+      max-width: 200px;
+    }
+
+    .owner-infos {
+      p {
+        font-size: $font-xl;
+        padding-left: unset;
+        padding-right: $generic-size-xs;
+      }
+    }
+
+    .picture-owner {
+      width: 64px;
+      height: 64px;
+    }
+
+    .Apartment-Dropdown-bloc {
+
+      .collapse-bloc {
+        width: 60%;
+        max-width: 482px;
+      }
+
+      .collapse-description-active  {
+
+        border-radius: 10px;
+        p {
+
+          font-size: $font-xl;
+          font-weight: 400;
+        }
+      }
     }
 
     .footer {
@@ -157,7 +340,7 @@ body {
       }
     }
 
-    .header, .cover, .Gallery {
+    .header, .cover, .Gallery, .carousel-bloc, .section__Apartment  {
       max-width: 1240px;
     }
 
@@ -198,13 +381,24 @@ body {
     }
 
     .logo-bloc {
-      // margin: 24px 55px 0 85px;
       margin: 0;
     }
 
     .navigation {
       margin-right: 0;
       align-self: unset;
+    }
+
+    .Apartment-Dropdown-bloc {
+
+      justify-content: space-between;
+
+      .collapse-bloc {
+        width: 100%;
+        max-width: 582px;
+        margin: 0;
+      }
+
     }
 
     .footer {

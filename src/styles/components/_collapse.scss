@@ -2,13 +2,14 @@
 .collapse-bloc {
   @extend %columnSpaceevenly;
   width: 90%;
-  height: 500px;
+  max-height: 500px;
   margin: $generic-size-l auto;
 }
 
 
 .collapse-toggle {
-  width: 90%;
+  width: 100%;
+  margin-bottom: $generic-size-l;
 }
 
 .title-conditions {
@@ -34,10 +35,12 @@
 
 .toggle-open {
   transition: transform 0.3s ease;
+  transform: rotate(180deg);
 }
 
 .toggle-close {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
 }
 
 
@@ -47,7 +50,6 @@
   background-color: $color-2;
   transition: height 0.8s ease-in-out, transform 1s ease-in-out;
   transform-origin: top;
-  // transition: all 0.3s cubic-bezier(0,1,0,1);
   width: 100%;
   height: 0;
   overflow: hidden;
@@ -60,8 +62,15 @@
   font-size: $font-s;
   height: 143px;
   line-height: 142%;
-  // transition: all 0.8s cubic-bezier(1,0,1,0);
   transform: scaleY(1);
   border-radius: 7px;
   padding: 16px;
+}
+
+
+.Apartment-Dropdown-bloc {
+  .collapse-bloc {
+    max-width: 360px;
+    width: 100%;
+  }
 }

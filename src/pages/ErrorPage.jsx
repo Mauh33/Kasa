@@ -6,7 +6,7 @@ import ErrorImg from "../assets/icons/404.png";
 
 const ErrorPage = () => {
   return (
-    <div>
+    <div className='page'>
       <Header />
       <main>
         <div className='error-bloc'>

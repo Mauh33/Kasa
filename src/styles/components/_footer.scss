@@ -13,11 +13,15 @@
     color: $color-screen;
     font-size: $font-s;
   }
+}
 
-  .logo {
+  .logo, .logo-footer {
     width: 122px;
     height: 40px;
     margin-bottom: $generic-size-l;
   }
-}
+
+  .logo-footer {
+    color: $color-screen;
+  }
 
