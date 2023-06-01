@@ -1,0 +1,88 @@
+
+.section__Apartment, .apartment-block {
+  margin: auto;
+}
+
+.section__Apartment {
+  width: 90%;
+}
+
+.infos {
+  @extend %columnCenterFlex;
+  margin-top: 10px;
+}
+
+.location-infos {
+  flex-basis: 80px;
+  width: 100%;
+  color: $color-1;
+
+
+  h1 {
+    font-size: $font-xl;
+    font-weight: 500;
+    line-height: 1.5em;
+  }
+}
+
+.location {
+  font-size: $font-m;
+}
+
+
+.tags-bloc {
+  @extend %js-startFLex;
+}
+
+.tags-bloc .tags:first-child {
+  margin-left: 0;
+}
+
+.tags {
+  width: 90px;
+  height: 18px;
+  background-color: $color-1;
+  margin: 10px 5px;
+  border-radius: 8px;
+}
+
+.tags p {
+  color: $color-screen;
+  font-size: $font-xs;
+  text-align: center;
+  padding-top: 3px;
+}
+
+.owner-bloc {
+  display: flex;
+  @include js-spacebetweenFlex;
+  width: 100%;
+}
+
+.owner-infos  {
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  margin-right: 10px;
+}
+
+.owner-infos p {
+  display: block;
+  width: 80px;
+  text-align: end;
+  color: $color-1;
+  font-size: $font-s;
+  padding: 5px;
+  line-height: 18px;
+}
+
+.picture-owner {
+  width: $generic-size-xxl;
+  height: $generic-size-xxl;
+  border-radius: 25px;
+}
+
+.starSnippets-bloc img {
+  width: 18px;
+  height: 18px;
+}

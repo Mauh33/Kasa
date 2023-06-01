@@ -33,6 +33,7 @@ const Apartment = () => {
 
   const pictures =
     filteredDataWithTags.length > 0 ? filteredDataWithTags[0].pictures : [];
+  console.log(pictures);
 
   return (
     <div className='page'>
@@ -42,43 +43,45 @@ const Apartment = () => {
         <section className='section__Apartment'>
           <div className='apartment-block'>
             {filteredDataWithTags.map((item, i) => (
-              <div key={i}>
-                <div>
+              <div key={i} className='infos'>
+                <div className='location-infos'>
                   <h1>{item.title}</h1>
                   <div>
-                    <p>{item.location}</p>
+                    <p className='location'>{item.location}</p>
                   </div>
-                  <div>
-                    <div>
-                      {item.tags.map((tags, index) => (
+
+                  <div className='tags-bloc'>
+                    {item.tags.map((tags, index) => (
+                      <div className='tags'>
                         <p key={index}>{tags}</p>
-                      ))}
-                      <p></p>
-                    </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <div>
-                  <div>
+                <div className='owner-bloc'>
+                  <div className='starSnippets-bloc'>
+                    {Array.from({ length: 5 }, (_, index) => (
+                      <img
+                        key={index}
+                        src={
+                          index < item.rating ? RatingStar : RatingInactiveStar
+                        }
+                        alt=''
+                      />
+                    ))}
+                  </div>
+                  <div className='owner-infos'>
                     <p>{item.host.name}</p>
-                    <img src={item.host.picture} alt='' />
-                    <div>
-                      {Array.from({ length: 5 }, (_, index) => (
-                        <img
-                          key={index}
-                          src={
-                            index < item.rating
-                              ? RatingStar
-                              : RatingInactiveStar
-                          }
-                          alt=''
-                        />
-                      ))}
-                    </div>
+                    <img
+                      className='picture-owner'
+                      src={item.host.picture}
+                      alt=''
+                    />
                   </div>
                 </div>
               </div>
             ))}
-            <div>
+            <div className='Apartment-Dropdown-bloc'>
               <Dropdown
                 data={filteredDataWithTags}
                 showDescription={true}
@@ -99,28 +102,3 @@ const Apartment = () => {
 };
 
 export default Apartment;
-
-/* {range.map((rangeElem) =>
-  item >= rangeElem ? (
-    <span key={rangeElem.toString()}>{}</span>
-    ) : null
-    )} */
-
-/*  const title =
-      filteredDataWithTags.length > 0 ? filteredDataWithTags[0].title : "";
-
-    const location =
-      filteredDataWithTags.length > 0 ? filteredDataWithTags[0].location : "";
-
-    const tags =
-      filteredDataWithTags.length > 0 ? filteredDataWithTags[0].tags : [];
-
-    const rating =
-      filteredDataWithTags.length > 0 ? filteredDataWithTags[0].rating : [];
-
-    const hostName =
-      filteredDataWithTags.length > 0 ? filteredDataWithTags[0].host[0] : [];
-
-    const hostPicture =
-      filteredDataWithTags.length > 0 ? filteredDataWithTags[0].host[1] : [];
-    */

@@ -9,7 +9,6 @@ const GalleryApartments = () => {
     <div className='Gallery'>
       {jsonData.map((item, i) => (
         <div className='card' key={i}>
-          <h2>{item.title}</h2>
           <div className='linear-card'>
             <NavLink
               to={`/Apartment/${item.id.replace(/\s+/g, "-")}`}
@@ -17,6 +16,7 @@ const GalleryApartments = () => {
             >
               <img src={item.cover} alt='' />
             </NavLink>
+            <h2>{item.title}</h2>
           </div>
         </div>
       ))}
