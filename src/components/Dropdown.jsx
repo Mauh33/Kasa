@@ -1,5 +1,4 @@
 import React from "react";
-// import ConditionsData from "../datas/conditionsData";
 import ArrowBack from "../assets/icons/arrow_back.png";
 import { useState } from "react";
 
@@ -63,5 +62,3 @@ const Dropdown = ({ data, showDescription, showEquipments, showValue }) => {
 };
 
 export default Dropdown;
-
-// {<p>{item.equipments}</p>}
