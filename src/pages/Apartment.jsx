@@ -43,7 +43,7 @@ const Apartment = () => {
         <section className='section__Apartment'>
           <div className='apartment-block'>
             {filteredDataWithTags.map((item, i) => (
-              <div key={i} className='infos'>
+              <div key={`${item.id}-${i}`} className='infos'>
                 <div className='location-infos'>
                   <h1>{item.title}</h1>
                   <div>

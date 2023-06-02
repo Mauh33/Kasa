@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { link } from "react-router-dom";
 import Logo from "../assets/icons/logo.svg";
 
 const Header = () => {
@@ -23,11 +22,9 @@ const Header = () => {
   return (
     <header className='header'>
       <div className='logo-bloc'>
-        <ul>
-          <NavLink to='/'>
-            <img className='logo' src={Logo} alt='Logo de Kasa' />
-          </NavLink>
-        </ul>
+        <NavLink to='/'>
+          <img className='logo' src={Logo} alt='Logo de Kasa' />
+        </NavLink>
       </div>
       <div className='navigation'>
         <NavLink
@@ -62,13 +59,3 @@ const Header = () => {
 };
 
 export default Header;
-
-/*
-
-classNameActive={({ isActive, isPending }) =>
-              isPending ? "unselected" : isActive ? "active-link" : ""
-            }
-
-activeClassName='active-link'
-className={isActive => (!isActive ? " unselected" : "active-link")}
-className={isActive => `nav-link${!isActive ? " unselected" : ""}`} */

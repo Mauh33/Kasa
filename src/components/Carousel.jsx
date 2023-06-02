@@ -21,6 +21,27 @@ const Carousel = ({ pictures }) => {
     );
   };
 
+  const renderButtonsAndCounter = () => {
+    if (totalReversed > 1) {
+      return (
+        <>
+          <button className='carousel-btn' onClick={goToPrevious}>
+            {<img className='carousel-arrow' src={ArrowPrev} alt='' />}
+          </button>
+          <button className='carousel-btn' onClick={goToNext}>
+            {<img className='carousel-arrow' src={ArrowNext} alt='' />}
+          </button>
+          <div className='carousel-counter-bloc'>
+            <p className='carousel-counter'>{`${
+              currentIndex + 1
+            }/${totalReversed}`}</p>
+          </div>
+        </>
+      );
+    }
+    return null;
+  };
+
   return (
     <div className='carousel-bloc'>
       <div className='carousel'>
@@ -29,17 +50,7 @@ const Carousel = ({ pictures }) => {
           src={reversedPictures[currentIndex]}
           alt=''
         />
-        <button className='carousel-btn' onClick={goToPrevious}>
-          {<img className='carousel-arrow' src={ArrowPrev} alt='' />}
-        </button>
-        <button className='carousel-btn' onClick={goToNext}>
-          {<img className='carousel-arrow' src={ArrowNext} alt='' />}
-        </button>
-        <div className='carousel-counter-bloc'>
-          <p className='carousel-counter'>{`${
-            currentIndex + 1
-          }/${totalReversed}`}</p>
-        </div>
+        {renderButtonsAndCounter()}
       </div>
     </div>
   );
