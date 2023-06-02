@@ -4,15 +4,9 @@
   width: 145px;
   height: 47px;
   margin: $generic-size-s $generic-size-xs;
-
-  & .logo {
-    width: inherit;
-    height: inherit;
-  }
 }
 
 .header {
-
   width: 90%;
   margin: auto;
 
@@ -32,7 +26,6 @@ a.active{
   text-decoration: underline;
 }
 
-
 .minify, .minify2 {
   text-transform: lowercase;
 }
@@ -41,10 +34,7 @@ a.active{
   padding-left: 5px;
 }
 
-
-
 .navigation {
-
   a {
     padding: 0 $generic-size-xs;
   }
