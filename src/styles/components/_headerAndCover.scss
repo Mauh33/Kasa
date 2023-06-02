@@ -19,13 +19,19 @@
   li {
     color: $color-1;
     font-size: $font-s;
-    display: inline-block;
   }
-  .active {
-    text-decoration: underline;
-  }
-
 }
+
+a{
+  text-decoration: none;
+  color: #FF6060;
+  display: inline-block;
+}
+
+a.active{
+  text-decoration: underline;
+}
+
 
 .minify, .minify2 {
   text-transform: lowercase;

@@ -66,6 +66,14 @@ body {
 
   @include breakpoint(s) {
 
+    .card:nth-child(odd) {
+      margin-right: 5px;
+    }
+
+    .card:nth-child(even) {
+      margin-left: 5px;
+    }
+
     .main-Apartment {
       padding-bottom: 100px;
     }
@@ -205,6 +213,7 @@ body {
       width: 350px;
       li {
         font-size: $font-xxl;
+        padding-left: 68px;
       }
     }
     .header {
@@ -235,9 +244,13 @@ body {
         margin-right:0px;
       }
     }
-    .card, .card img, .linear-car {
+    .card, .card img, .linear-card {
       height: 340px;
       max-height: unset;
+    }
+
+    .linear-card::before {
+      height: 100%;
     }
 
     .carousel-picture {
