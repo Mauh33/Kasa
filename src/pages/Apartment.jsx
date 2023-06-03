@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Carousel from "../components/Carousel";
 import { DataContext } from "../utils/hooks/DataContext";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Dropdown from "../components/Dropdown";
 import RatingStar from "../assets/icons/star-active.png";
 import RatingInactiveStar from "../assets/icons/star-inactive.png";
@@ -11,6 +11,7 @@ import RatingInactiveStar from "../assets/icons/star-inactive.png";
 const Apartment = () => {
   const jsonData = useContext(DataContext);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const filteredData = jsonData.filter(item => item.id === id);
   const filteredDataWithTags = filteredData.reduce((acc, item) => {
@@ -34,6 +35,11 @@ const Apartment = () => {
   const pictures =
     filteredDataWithTags.length > 0 ? filteredDataWithTags[0].pictures : [];
   console.log(pictures);
+
+  if (filteredData.length === 0) {
+    navigate("/ErrorPage");
+    return null;
+  }
 
   return (
     <div className='page'>

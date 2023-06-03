@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import { NavLink } from "react-router-dom";
 import ErrorImg from "../assets/icons/404.png";
 
-const ErrorPage = () => {
+export function ErrorPage() {
   return (
     <div className='page'>
       <Header />
@@ -24,6 +24,6 @@ const ErrorPage = () => {
       <Footer />
     </div>
   );
-};
+}
 
 export default ErrorPage;
