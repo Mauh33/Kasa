@@ -20,7 +20,7 @@ const Dropdown = ({ data, showDescription, showEquipments, showValue }) => {
     <div className='collapse-bloc'>
       {data.map((item, i) => (
         <div className='collapse-toggle' key={i}>
-          <div className='title-conditions'>
+          <div className='title-conditions' onClick={() => toggle(i)}>
             {showValue && item.value ? (
               <p>{item.value}</p>
             ) : showDescription && item.description ? (
@@ -28,7 +28,7 @@ const Dropdown = ({ data, showDescription, showEquipments, showValue }) => {
             ) : showEquipments && item.equipments ? (
               <>{<p>{"Equipements"}</p>}</>
             ) : null}
-            <div onClick={() => toggle(i)}>
+            <div>
               <img
                 src={ArrowBack}
                 alt=''
